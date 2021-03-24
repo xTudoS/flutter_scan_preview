@@ -16,6 +16,7 @@ import me.dm7.barcodescanner.core.IViewFinder
 import me.dm7.barcodescanner.core.ViewFinderView
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 import com.google.zxing.Result as ZxinResult
+import com.google.zxing.BarcodeFormat;
 
 class ScanPreviewController(context: Context,
                             id: Int,

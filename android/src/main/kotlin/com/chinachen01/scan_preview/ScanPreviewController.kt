@@ -49,6 +49,8 @@ class ScanPreviewController(context: Context,
     private val messageChannel = BasicMessageChannel(binaryMessenger, MESSAGE_CHANNEL, StandardMessageCodec())
 
     init {
+        val formats = listOf(BarcodeFormat.ITF, BarcodeFormat.QR_CODE)
+        scanPreview.setFormats(formats)
         methodChannel.setMethodCallHandler(this)
         scanPreview.setResultHandler(this)
     }

@@ -27,14 +27,14 @@ class ScanPreviewController(context: Context,
     }
 
     private val scanPreview = object : ZXingScannerView(context) {
-        override fun createViewFinderView(context: Context?): IViewFinder {
-            val viewFinderView = ViewFinderView(context)
-            val args = params as Map<*, *>
-            val laserColor: Long = args["laserColor"] as Long
-            viewFinderView.setLaserColor(laserColor.toInt())
-            viewFinderView.setLaserEnabled(true)
-            val borderColor: Long = args["borderColor"] as Long
-            viewFinderView.setBorderColor(borderColor.toInt())
+//         override fun createViewFinderView(context: Context?): IViewFinder {
+//             val viewFinderView = ViewFinderView(context)
+//             val args = params as Map<*, *>
+//             val laserColor: Long = args["laserColor"] as Long
+//             viewFinderView.setLaserColor(laserColor.toInt())
+//             viewFinderView.setLaserEnabled(true)
+//             val borderColor: Long = args["borderColor"] as Long
+//             viewFinderView.setBorderColor(borderColor.toInt())
 //            viewFinderView.setBorderStrokeWidth(mBorderWidth)
 //            viewFinderView.setBorderLineLength(mBorderLength)
 //            viewFinderView.setMaskColor(mMaskColor)
@@ -43,8 +43,8 @@ class ScanPreviewController(context: Context,
 //            viewFinderView.setBorderCornerRadius(mCornerRadius)
 //            viewFinderView.setSquareViewFinder(mSquaredFinder)
 //            viewFinderView.setViewFinderOffset(mViewFinderOffset)
-            return viewFinderView
-        }
+//             return viewFinderView
+//         }
     }
     private val methodChannel = MethodChannel(binaryMessenger, "${ScanPreviewPlugin.VIEW_TYPE}_$id")
     private val messageChannel = BasicMessageChannel(binaryMessenger, MESSAGE_CHANNEL, StandardMessageCodec())

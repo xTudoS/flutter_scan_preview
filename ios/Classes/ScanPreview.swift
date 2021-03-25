@@ -11,7 +11,9 @@ class ScanPreview : NSObject,FlutterPlatformView {
     
     init(frame:CGRect, viewId: Int64, args: Any?, registrar: FlutterPluginRegistrar) {
         uiView = UIView(frame: frame)
-        scanner = MTBBarcodeScanner(initWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeInterleaved2of5Code], previewView: uiView)
+        
+        let types = ["org.iso.QRCode", "org.ansi.Interleaved2of5"];           
+        scanner = MTBBarcodeScanner(metadataObjectTypes:types, previewView: uiView)
         let tmpScanner = scanner
         methodChannel = FlutterMethodChannel.init(name: "scan_preview_\(viewId)", binaryMessenger: registrar.messenger())
         messageChannel = FlutterBasicMessageChannel.init(name: "scan_preview_message", binaryMessenger: registrar.messenger())
